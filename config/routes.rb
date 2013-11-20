@@ -1,4 +1,4 @@
 Todos::Application.routes.draw do
 
-  resources :todos
+  resources :todos, except: [:show]
 end
