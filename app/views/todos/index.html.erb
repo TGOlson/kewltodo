@@ -1,1 +1,5 @@
-index.html.erb
+<%= link_to '+', new_todo_path  %>
+
+<% @todos.each do |todo| %>
+<%= todo.description %>
+<% end %>
