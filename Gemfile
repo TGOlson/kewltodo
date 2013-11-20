@@ -9,10 +9,11 @@ gem 'pg'
 
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.0"
+  gem "rspec-rails"
 end
 
 group :test do
+  gem "shoulda-matchers"
   gem "capybara"
   gem 'database_cleaner'
 end
