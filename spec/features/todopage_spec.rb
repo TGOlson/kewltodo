@@ -1,12 +1,12 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# describe 'Todo Page' do
-# 	context 'Can click a button to create a new todo' do
-# 		visit '/todos'
-# 		page.should have_content 'Create a new todo'
-# 	end
+describe 'Todo Page' do
+	it 'Can click a button to create a new todo' do	
+		visit '/todos'
+		page.should have_link '+'
+	end
 
 
-# end
+end
 
 ### VISIT IS BROKEN
