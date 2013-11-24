@@ -31,6 +31,7 @@ function checkForSubmit(uniqId){
 	$('#' + uniqId).on('ajax:success', function(e, data, status, xhr){
 		$(this).replaceWith(data)
 		checkForDelete() // need to reapply listeners when new item is created
+		checkForComplete() // need to reapply listeners when new item is created
 	})
 }
 
@@ -43,7 +44,6 @@ function checkForComplete(){
 			$(todo).find('span.todo-description').prepend("<i class='fa fa-check'></i>")
 		}
 		todo.toggleClass('complete')
-		// checkForComplete()
 	})
 }
 
