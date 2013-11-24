@@ -1,0 +1,34 @@
+// colors
+
+$bg: #d35400
+$todo-bg: #e67e22
+$todo-font: #fff
+$border: #111
+
+// mixins
+
+=margin-reset
+	margin: 0px
+	padding: 0px
+
+=todo
+	background-color: $todo-bg
+	color: $todo-font
+	font-size: 30px
+
+body
+	+margin-reset
+	background-color: $bg
+
+#todos
+	ul
+		+margin-reset
+		width: 800px
+		margin: auto
+
+
+		li
+			list-style: none
+
+.single_todo
+	+todo

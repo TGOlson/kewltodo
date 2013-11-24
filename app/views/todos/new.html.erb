@@ -1,4 +1,4 @@
-<%= form_for @todo do |f| %>
+<%= form_for @todo, url: list_todos_path(@list) do |f| %>
 <%= f.text_field :description, placeholder: 'description' %>
 <%= f.label :complete, 'complete' %>
 <%= f.check_box :complete %>
