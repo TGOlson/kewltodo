@@ -32,5 +32,14 @@ describe 'List Page' do
 				click_button 'submit'
 				}.to change(List, :count).by 0
 		end
+
+		it 'can create a list with complete marked true' do
+			visit new_list_path
+			fill_in 'name', with: 'cool'
+			check 'complete'
+			click_button 'submit'
+			expect(List.last.complete).to eq true
+
+		end
 	end
 end
