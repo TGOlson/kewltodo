@@ -23,7 +23,6 @@ $nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b, red
 =todo
 	background-color: $todo
 	color: $todo-font
-	font-size: 35px
 
 body
 	+margin-reset
@@ -64,11 +63,11 @@ nav
 				h1
 					font-size: 25px
 
-			#create_new a,
-			#go_back a
+			#create-new a,
+			#go-back a
 				font-size: 50px
 
-			#current_location
+			#current-location
 
 				.variable
 					font-size: 25px
@@ -88,7 +87,7 @@ nav
 	width: 800px
 	margin: auto
 
-	.single_list
+	.single-list
 		height: 220px
 		width: 220px
 		background-color: $todo
@@ -114,7 +113,7 @@ nav
 		width: 800px
 		margin: auto
 	
-		.single_todo
+		.single-todo
 			+todo
 			margin-top: 10px
 
@@ -125,7 +124,8 @@ nav
 			list-style: none
 			padding: 10px
 
-			.todo_actions
+			.todo-description
+				font-size: 35px
+
+			.todo-actions
 				float: right
-
-
