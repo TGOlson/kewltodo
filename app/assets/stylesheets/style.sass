@@ -1,7 +1,8 @@
 // colors
 
-$bg: #d35400
-$todo-bg: #e67e22
+$bg: #fff
+$todo: #8e44ad
+$todo-complete: #6C4080
 $todo-font: #fff
 $border: #111
 
@@ -12,7 +13,7 @@ $border: #111
 	padding: 0px
 
 =todo
-	background-color: $todo-bg
+	background-color: $todo
 	color: $todo-font
 	font-size: 35px
 
@@ -20,17 +21,35 @@ body
 	+margin-reset
 	background-color: $bg
 
+nav
+	position: absolute
+	top: 0px
+	right: 0px
+	height: 100%
+	width: 20%
+	background-color: red
+
+#container
+	width: 80%
+
 #todos
 	ul
 		+margin-reset
 		width: 800px
 		margin: auto
+	
+		.single_todo
+			+todo
+			margin-top: 10px
+
+		.complete
+			background-color: $todo-complete
 
 		li
 			list-style: none
 			padding: 10px
 
+			.todo_actions
+				float: right
 
-.single_todo
-	+todo
-	margin-top: 10px
+
