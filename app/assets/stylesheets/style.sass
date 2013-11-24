@@ -2,23 +2,21 @@ $bg: #fff
 $white: #fff
 $list: #8e44ad
 $todo: #8e44ad
-$nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b, red
-$font: Arial, Helvetica, sans-serif
+$nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b, #34495e
+$big-font: 22px
 
 =margin-reset
 	margin: 0px
 	padding: 0px
 
-=list
-	background-color: $todo
-	color: $todo-font
-	font-size: 35px
+=font-style
+	font-family: Arial, Helvetica, sans-serif
+	color: $white
 
 body
 	+margin-reset
+	+font-style
 	background-color: $bg
-	color: $white
-	font-family: $font
 
 	a
 		text-decoration: none
@@ -28,13 +26,11 @@ body
 		text-decoration: underline
 
 nav
-	position: absolute
+	position: fixed
 	top: 0px
 	left: 0px
 	height: 100%
 	width: 10%
-	color: $white
-	/*background-color: red*/
 
 	table
 		+margin-reset
@@ -74,24 +70,22 @@ nav
 	margin: auto
 
 	$list-dimension: 200px
-
+	
 	.single-list
+		background-color: $list
+		font-size: $big-font
 		height: $list-dimension
 		width: $list-dimension
-		background-color: $list
 		display: inline-block
 		margin: 20px
 		text-align: center
 
 		p
-			font-size: 30px
 			margin-top: 20%
 			padding: 10px
 
 	.complete
 		background-color: darken($list, 20%)
-
-
 
 #todos
 	padding-top: 20px
@@ -101,22 +95,18 @@ nav
 
 	.single-todo
 		background-color: $todo
-		margin-top: 10px
-		margin-bottom: 10px
+		margin: 10px 0
 		list-style: none
 		padding: 20px
 
 		.todo-description
-			font-size: 25px
-
+			font-size: $big-font
+		
 		.todo-actions
 			float: right
 
 			i
 				margin-left: 15px
-
-	.single-todo:hover
-		background-color: lighten($todo, 5%)
 
 	.single-todo:hover
 		background-color: lighten($todo, 5%)
@@ -132,12 +122,11 @@ nav
 		padding: 18px
 
 		input
-			font-size: 25px
+			+margin-reset
+			+font-style
+			font-size: $big-font
 			border: none
 			background-color: lighten($todo, 5%)
-			color: $white
-			font-family: $font
-			+margin-reset
 
 		input:focus
 			outline: none

@@ -1,18 +1,19 @@
-<li class='single-todo <%= "complete" if @todo.complete %>' >
+<li class='single-todo<%= " complete" if @todo.complete %>' >
 
+	<div>
 	<span class='todo-description'>
 		<%= (raw("<i class='fa fa-check'></i>")) if @todo.complete %>
 		<%= @todo.description %>
 	</span>
 
 	<span class='todo-actions'>		
-		<%= link_to todo_path(id: @todo.id, todo: { complete: !@todo.complete }), id: "complete-#{@todo.id}", method: :put do %>
+		<%= link_to todo_path(id: @todo.id, complete: 'toggle'), remote: true, class: 'complete-action', id: "complete-#{@todo.id}", method: :put do %>
 			<i class='fa fa-star-o fa-2x'></i>
 		<% end %>
 
-		<%= link_to todo_path(@todo), method: :delete, id: "delete-#{@todo.id}" do %>
+		<%= link_to todo_path(@todo), method: :delete, remote: true, class: 'delete-action', id: "delete-#{@todo.id}" do %>
 			<i class='fa fa-trash-o fa-2x'></i>
 		<% end %>
 	</span>
-
+</div>
 </li>
