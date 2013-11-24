@@ -9,7 +9,6 @@ describe TodosController do
     describe 'todos' do
         it '#index' do
             get :index, list_id: list.id
-            # expect(assigns(:todos)).to eq Todo.all
             expect(assigns(:todos).first.list.id).to eq list.id 
         end
 

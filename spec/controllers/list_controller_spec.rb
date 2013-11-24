@@ -16,29 +16,24 @@ describe ListsController do
 			expect(assigns(:list)).to be_an_instance_of List
 		end
 
-		it '#create' do
-			expect{
-				post :create, list: {  name: 'cool' }
-				}.to change(List, :count).by 1
-			end
+	it '#create' do
+		expect{
+			post :create, list: {  name: 'cool' }
+			}.to change(List, :count).by 1
+		end
 
-			it '#show' do
-				get :show, id: list.id
-				expect(assigns(:list).name).to eq 'Sweet Test Instance'
-			end
+		it '#edit' do
+			get :edit, id: list.id
+			expect(assigns(:list).id).to eq list.id
+		end
 
-			it '#edit' do
-				get :edit, id: list.id
-				expect(assigns(:list).id).to eq list.id
-			end
+		it '#update' do
+			put :update, { id: list.id, list: list_params }
+			expect(assigns(:list).name).to eq 'cool'
+		end
 
-			it '#update' do
-				put :update, { id: list.id, list: list_params }
-				expect(assigns(:list).name).to eq 'cool'
-			end
-
-			it '#destroy' do
-				expect{ delete :destroy, id: list.id }.to change{List.count}.by(-1)
-			end
+		it '#destroy' do
+			expect{ delete :destroy, id: list.id }.to change{List.count}.by(-1)
 		end
 	end
+end

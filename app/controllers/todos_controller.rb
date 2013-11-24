@@ -1,11 +1,13 @@
 class TodosController < ApplicationController
 
 	def index
-		@todos = Todo.where('list_id = ?', params[:list_id])
+		@list = List.find(params[:list_id])
+		@todos = @list.todos
 	end
 
 	def new
 		@todo = Todo.new
+		@list = List.find(params[:list_id])
 	end
 
 	def create

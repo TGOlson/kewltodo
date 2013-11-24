@@ -61,7 +61,7 @@ describe 'List Page' do
 	context 'can see all related todos' do
 		it 'can navigate to list show page' do
 			list.todos << Todo.create(description: 'kewl todo')
-			visit list_path(list.id)
+			visit list_todos_path(list.id)
 			expect(page).to have_content 'kewl todo'
 		end	
 	end
