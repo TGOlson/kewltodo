@@ -3,18 +3,20 @@ $white: #fff
 $list: #8e44ad
 $todo: #8e44ad
 $nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b, #34495e
-$font: Arial, Helvetica, sans-serif
 $big-font: 22px
 
 =margin-reset
 	margin: 0px
 	padding: 0px
 
+=font-style
+	font-family: Arial, Helvetica, sans-serif
+	color: $white
+
 body
 	+margin-reset
+	+font-style
 	background-color: $bg
-	color: $white
-	font-family: $font
 
 	a
 		text-decoration: none
@@ -29,9 +31,6 @@ nav
 	left: 0px
 	height: 100%
 	width: 10%
-	color: $white
-
-	/*background-color: red*/
 
 	table
 		+margin-reset
@@ -124,9 +123,8 @@ nav
 
 		input
 			+margin-reset
+			+font-style
 			font-size: $big-font
-			font-family: $font
-			color: $white
 			border: none
 			background-color: lighten($todo, 5%)
 
