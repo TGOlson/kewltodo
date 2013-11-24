@@ -6,7 +6,7 @@ $(function(){
 	checkForComplete()
 
 	$('#concentration-mode').on('click', function(){
-		$('nav').toggleClass('hiddenNav', 500)
+		$('nav').fadeToggle() //.toggleClass('hiddenNav', 500)
 	})
 
 	$('#create-new').on('ajax:success', function(e, data, status, xhr){
