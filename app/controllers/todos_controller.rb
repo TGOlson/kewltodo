@@ -8,13 +8,14 @@ class TodosController < ApplicationController
 	def new
 		@todo = Todo.new
 		@list = List.find(params[:list_id])
+		render :new, layout: false
 	end
 
 	def create
 		@todo = Todo.new params[:todo]
 		@todo.list_id = params[:list_id]
 		if @todo.save
-			redirect_to list_todos_path(params[:list_id]) 
+			render partial: 'layouts/todo', todo: @todo
 		else
 			redirect_to new_list_todo_path(params[:list_id])
 		end

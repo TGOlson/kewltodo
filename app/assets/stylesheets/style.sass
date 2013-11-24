@@ -1,34 +1,156 @@
-// colors
-
-$bg: #d35400
-$todo-bg: #e67e22
-$todo-font: #fff
-$border: #111
-
-// mixins
+$bg: #fff
+$white: #fff
+$list: #8e44ad
+$todo: #8e44ad
+$nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b, red
+$font: Arial, Helvetica, sans-serif
 
 =margin-reset
 	margin: 0px
 	padding: 0px
 
-=todo
-	background-color: $todo-bg
+=list
+	background-color: $todo
 	color: $todo-font
-	font-size: 30px
+	font-size: 35px
 
 body
 	+margin-reset
 	background-color: $bg
+	color: $white
+	font-family: $font
+
+	a
+		text-decoration: none
+		color: $white
+
+	a:hover
+		text-decoration: underline
+
+nav
+	position: absolute
+	top: 0px
+	left: 0px
+	height: 100%
+	width: 10%
+	color: $white
+	/*background-color: red*/
+
+	table
+		+margin-reset
+		list-style: none
+		height: 100%
+		width: 100%
+		position: relative
+
+		tr
+			width: 100%
+			height: 20%
+			text-align: center
+
+			td
+				vertical-align: middle
+				padding: 10px
+
+			#create-new a,
+			#go-back a
+				font-size: 35px
+
+			#credits
+				font-size: 15px
+
+		@for $i from 1 through length($nav-colors)
+			tr:nth-child(#{$i})
+				background-color: nth($nav-colors, $i)
+
+
+
+#container
+	margin-left: 10%
+	width: 90%
+
+#lists
+	width: 700px
+	margin: auto
+
+	$list-dimension: 200px
+
+	.single-list
+		height: $list-dimension
+		width: $list-dimension
+		background-color: $list
+		display: inline-block
+		margin: 20px
+		text-align: center
+
+		p
+			font-size: 30px
+			margin-top: 20%
+			padding: 10px
+
+	.complete
+		background-color: darken($list, 20%)
+
+
 
 #todos
-	ul
-		+margin-reset
-		width: 800px
-		margin: auto
+	padding-top: 20px
+	width: 700px
+	margin: auto
+	cursor: default
+
+	.single-todo
+		background-color: $todo
+		margin-top: 10px
+		margin-bottom: 10px
+		list-style: none
+		padding: 20px
+
+		.todo-description
+			font-size: 25px
+
+		.todo-actions
+			float: right
+
+			i
+				margin-left: 15px
+
+	.single-todo:hover
+		background-color: lighten($todo, 5%)
+
+	.single-todo:hover
+		background-color: lighten($todo, 5%)
+
+	.complete
+		background-color: darken($todo, 20%)
+
+	.complete:hover
+		background-color: darken($todo, 15%)
 
 
-		li
-			list-style: none
+	.unsaved
+		padding: 18px
 
-.single_todo
-	+todo
+		input
+			font-size: 25px
+			border: none
+			background-color: lighten($todo, 5%)
+			color: $white
+			font-family: $font
+			+margin-reset
+
+		input:focus
+			outline: none
+
+		input[type='submit']
+			background-color: $todo
+			cursor: pointer
+
+#concentration-mode
+	position: absolute
+	top: 5px
+	right: 5px
+	color: $todo
+
+.hiddenNav
+	display: none

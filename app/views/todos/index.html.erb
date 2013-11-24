@@ -1,5 +1,7 @@
-<h1><%= @list.name %></h1>
+<ul id='todos'>
+	<% @todos.each do |todo| %>
+		<% @todo = todo %>
+		<%= render 'layouts/todo', todo: @todo %>
+	<% end %>
+</ul>
 
-<%= link_to 'create new todo', new_list_todo_path(@list) %>
-
-<%= render 'layouts/todos' %>
