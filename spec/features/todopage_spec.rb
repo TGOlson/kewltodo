@@ -13,7 +13,7 @@ describe 'Todo Page' do
 
 		it 'todo can be marked as complete' do
 			visit list_todos_path(list)
-			click_link 'toggle-complete-' + todo.id.to_s
+			click_link 'complete-' + todo.id.to_s
 			expect(Todo.last.complete).to eq true
 		end
 

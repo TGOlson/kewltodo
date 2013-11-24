@@ -46,7 +46,7 @@ describe 'List Page' do
 	context 'can update attributes' do
 		it 'can be marked as complete' do
 			visit lists_path
-			click_link 'toggle-complete-' + list.id.to_s
+			click_link 'complete-' + list.id.to_s
 			expect(List.last.complete).to eq true
 		end
 
