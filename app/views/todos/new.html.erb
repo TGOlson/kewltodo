@@ -1,4 +1,4 @@
-<%= form_for @todo, url: list_todos_path(@list) do |f| %>
+<%= form_for @todo, remote: true, url: list_todos_path(@list) do |f| %>
 	<%= f.text_field :description, placeholder: 'type description and hit enter', autofocus: true %>
 	<%= f.submit 'save' %>
 	<span class='todo-actions'>		

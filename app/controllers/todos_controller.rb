@@ -15,7 +15,8 @@ class TodosController < ApplicationController
 		@todo = Todo.new params[:todo]
 		@todo.list_id = params[:list_id]
 		if @todo.save
-			redirect_to list_todos_path(params[:list_id]) 
+			# render json: { todo: @todo }
+			render partial: 'layouts/todo', todo: @todo
 		else
 			redirect_to new_list_todo_path(params[:list_id])
 		end

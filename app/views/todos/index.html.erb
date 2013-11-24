@@ -1,6 +1,7 @@
 <ul id='todos'>
 	<% @todos.each do |todo| %>
-		<%= render 'layouts/todo', todo: todo %>
+		<% @todo = todo %>
+		<%= render 'layouts/todo', todo: @todo %>
 	<% end %>
 </ul>
 
