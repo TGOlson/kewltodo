@@ -13,14 +13,14 @@ describe 'Todo Page' do
 
 		it 'todo can be marked as complete' do
 			visit list_todos_path(list)
-			click_link 'complete'
+			click_link 'toggle-complete-' + todo.id.to_s
 			expect(Todo.last.complete).to eq true
 		end
 
 		it 'can be deleted' do
 			visit list_todos_path(list)
 			expect{
-			click_link 'delete'
+			click_link 'delete-' + todo.id.to_s
 			}.to change(Todo, :count).by -1
 		end
 	end
