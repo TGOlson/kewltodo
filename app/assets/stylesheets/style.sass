@@ -5,6 +5,7 @@ $todo: #8e44ad
 $todo-complete: #6C4080
 $todo-font: #fff
 $border: #111
+$nav-colors: orange, green, blue, purple
 
 // mixins
 
@@ -28,6 +29,26 @@ nav
 	height: 100%
 	width: 20%
 	background-color: red
+
+	ul
+		+margin-reset
+		list-style: none
+		height: 100%
+		position: relative
+
+		li
+			width: 100%
+			height: 25%
+			text-align: center
+
+		@for $i from 1 through length($nav-colors)
+			li:nth-child(#{$i})
+				background-color: nth($nav-colors, $i)
+		
+			div
+				line-height: 100%
+				vertical-align: middle
+
 
 #container
 	width: 80%
