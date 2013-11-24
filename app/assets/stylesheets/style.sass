@@ -1,15 +1,8 @@
-// colors
-
 $bg: #fff
+$white: #fff
 $list: #8e44ad
-$list-complete: #6C4080
 $todo: #8e44ad
-$todo-complete: #6C4080
-$todo-font: #fff
-$border: #111
 $nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b, red
-
-// mixins
 
 =margin-reset
 	margin: 0px
@@ -20,20 +13,17 @@ $nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b, red
 	color: $todo-font
 	font-size: 35px
 
-=todo
-	background-color: $todo
-	color: $todo-font
-
 body
 	+margin-reset
 	background-color: $bg
+	color: $white
 
-a
-	text-decoration: none
-	color: #fff
+	a
+		text-decoration: none
+		color: $white
 
-a:hover
-	text-decoration: underline
+	a:hover
+		text-decoration: underline
 
 nav
 	position: absolute
@@ -41,7 +31,7 @@ nav
 	left: 0px
 	height: 100%
 	width: 10%
-	color: #fff
+	color: $white
 
 	table
 		+margin-reset
@@ -101,7 +91,7 @@ nav
 			padding: 10px
 
 	.complete
-		background-color: $list-complete
+		background-color: darken($list, 20%)
 
 
 
@@ -114,11 +104,11 @@ nav
 		margin: auto
 	
 		.single-todo
-			+todo
+			background-color: $todo
 			margin-top: 10px
 
 		.complete
-			background-color: $todo-complete
+			background-color: darken($todo, 20%)
 
 		li
 			list-style: none
