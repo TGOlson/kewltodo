@@ -31,20 +31,22 @@ describe 'Todo Page' do
 			page.should have_link '+'
 		end
 	
-		it 'create a new todo' do
+		it 'create a new todo with valid params' do
 			expect{
-			visit new_list_todo_path(list)
-			fill_in 'description', with: 'testy'
-			click_button 'submit'
+			visit list_todos_path(list)
+			click_link '+'
+			fill_in 'todo_description', with: 'testy'
+			click_button 'save'
 			}.to change(Todo, :count).by 1
-		end
+		end	
 
-		it 'can set complete to true' do
-			visit new_list_todo_path(list)
-			fill_in 'description', with: 'testy'
-			check 'complete'
-			click_button 'submit'
-			expect(Todo.last.complete).to eq true
+		it 'will not create a new todo with invalid params' do
+			expect{
+			visit list_todos_path(list)
+			click_link '+'
+			click_button 'save'
+			# add expect test for error message
+			}.to change(Todo, :count).by 0
 		end
 	end
 end
