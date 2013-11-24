@@ -42,4 +42,12 @@ describe 'List Page' do
 
 		end
 	end
+
+	context 'can update attributes' do
+		it 'can be marked as complete' do
+			visit lists_path
+			click_link 'complete'
+			expect(List.last.complete).to eq true
+		end
+	end
 end
