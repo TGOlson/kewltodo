@@ -28,16 +28,17 @@ class TodosController < ApplicationController
 	def update
 		@todo = Todo.find params[:id]
 		@todo.update_attributes params[:todo]
+		@todo.toggle_complete if params[:complete]
 		if @todo.save
-			redirect_to list_todos_path(@todo.list) 
+			render json: { success: "Todo marked complete." }
 		else
-			redirect_to edit_todo_path(@todo) 
+			render json: { error: "Todo action failed." }
 		end
 	end
 
 	def destroy
 		todo = Todo.find(params[:id]).destroy
-		redirect_to list_todos_path(todo.list)
+		render json: { success: "Todo deleted." }
 	end
 
 end
