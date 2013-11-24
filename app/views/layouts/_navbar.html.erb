@@ -12,7 +12,7 @@
 	<tr>
 		<td id="create-new"><p>
 				<% if @todo || @todos %>
-					<%= link_to '+', new_list_todo_path(@list) %>
+					<%= link_to '+', new_list_todo_path(@list), remote: true %>
 				<% else %>
 					<%= link_to '+', new_list_path %>
 				<% end %>

@@ -1,6 +1,7 @@
 <%= form_for @todo, url: list_todos_path(@list) do |f| %>
-<%= f.text_field :description, placeholder: 'description' %>
-<%= f.label :complete, 'complete' %>
-<%= f.check_box :complete %>
-<%= f.submit 'submit' %>
+	<%= f.text_field :description, placeholder: 'type description and hit enter', autofocus: true %>
+	<%= f.submit 'save' %>
+	<span class='todo-actions'>		
+		<i class='fa fa-trash-o fa-2x'></i>
+	</span>
 <% end %>

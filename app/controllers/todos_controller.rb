@@ -8,6 +8,7 @@ class TodosController < ApplicationController
 	def new
 		@todo = Todo.new
 		@list = List.find(params[:list_id])
+		render :new, layout: false
 	end
 
 	def create
