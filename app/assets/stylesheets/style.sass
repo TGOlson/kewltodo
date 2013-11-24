@@ -5,7 +5,7 @@ $todo: #8e44ad
 $todo-complete: #6C4080
 $todo-font: #fff
 $border: #111
-$nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b
+$nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b, red
 
 // mixins
 
@@ -22,13 +22,20 @@ body
 	+margin-reset
 	background-color: $bg
 
+a
+	text-decoration: none
+	color: #fff
+
+a:hover
+	text-decoration: underline
+
 nav
 	position: absolute
 	top: 0px
 	right: 0px
 	height: 100%
-	width: 15%
-	background-color: red
+	width: 10%
+	color: #fff
 
 	table
 		+margin-reset
@@ -39,15 +46,25 @@ nav
 
 		tr
 			width: 100%
-			height: 25%
+			height: 20%
 			text-align: center
 
 			td
 				vertical-align: middle
+				padding: 10px
 
 			#kewltodo
-				font-size: 40px
+				font-size: 20px
 				color: #fff
+
+			#create_new a
+				font-size: 50px
+
+			#current_location
+
+				.variable
+					font-size: 25px
+
 
 		@for $i from 1 through length($nav-colors)
 			tr:nth-child(#{$i})

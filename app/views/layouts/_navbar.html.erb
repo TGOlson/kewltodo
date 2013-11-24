@@ -1,12 +1,12 @@
 <table>
 	<tr>
 		<td id="kewltodo">
-			<h1>kewltodo</h1>
+			<h1><%= link_to 'kewltodo', root_path%></h1>
 		</td>
 	</tr>
 	<tr>
 		<td id="create_new"><p>
-				<% if @list %>
+				<% if @todo || @todos %>
 					<%= link_to '+', new_list_todo_path(@list) %>
 				<% else %>
 					<%= link_to '+', new_list_path %>
@@ -15,9 +15,18 @@
 	</tr>
 	<tr>
 		<td id='current_location'>
-			<p>currently viewing <span class='variable'><%= @list ? @list.name : 'all lists' %></span></p>
+			<p>viewing</p><p><span class='variable'><%= @list ? @list.name : 'all lists' %></span></p>
 		</td>
 	</tr>
+	<tr>
+		<td id="credits"><p>
+				<% if @todo || @todos %>
+					<%= link_to 'back to all lists', lists_path %>
+				<% else %>
+					<%= link_to 'be kewl', new_list_path %>
+				<% end %>
+		</p></td>
+	</tr>	
 	<tr>
 		<td id="credits">
 			<p>making it kewl todo, by tyler</p>
