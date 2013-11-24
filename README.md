@@ -2,6 +2,8 @@
 
 A simple rails app for making dynamic todo lists.
 
+[kewltodo on heroku](http://kewltodo.herokuapp.com/)
+
 ### Goals
 
 * TDD the whole way, using Rspec Rails, Capybara, and Jasmine
