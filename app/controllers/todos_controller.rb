@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
 
 	def index
-		@todos = Todo.all
+		@todos = Todo.where('list_id = ?', params[:list_id])
 	end
 
 	def new
@@ -10,7 +10,12 @@ class TodosController < ApplicationController
 
 	def create
 		@todo = Todo.new params[:todo]
-		redirect_to todos_path if @todo.save
+		@todo.list_id = params[:list_id]
+		if @todo.save
+			redirect_to list_todos_path(params[:list_id]) 
+		else
+			redirect_to new_list_todo_path(params[:list_id])
+		end
 	end
 
 	def edit
@@ -20,12 +25,16 @@ class TodosController < ApplicationController
 	def update
 		@todo = Todo.find params[:id]
 		@todo.update_attributes params[:todo]
-		redirect_to todos_path if @todo.save
+		if @todo.save
+			redirect_to list_todos_path(@todo.list) 
+		else
+			redirect_to edit_todo_path(@todo) 
+		end
 	end
 
 	def destroy
-		Todo.find(params[:id]).destroy
-		redirect_to todos_path
+		todo = Todo.find(params[:id]).destroy
+		redirect_to list_todos_path(todo.list)
 	end
 
 end

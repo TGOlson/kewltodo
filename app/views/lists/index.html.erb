@@ -1,7 +1,7 @@
 <%= link_to 'create new list', new_list_path %>
 
 <% @lists.each do |list| %>
-<p><%= list.name %>
+<p><%= link_to list.name, list_path(list) %>
 <%= link_to 'complete', list_path(id: list.id, list: { complete: !list.complete }), method: :put %>
 <%= link_to 'delete', list_path(list), method: :delete %></p>
 <% end %>

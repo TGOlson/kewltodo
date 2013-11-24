@@ -3,8 +3,10 @@ require 'spec_helper'
 describe Todo do
 	it { should allow_mass_assignment_of(:description) }
 	it { should allow_mass_assignment_of(:complete) }
+	it { should allow_mass_assignment_of(:list_id) }
 
 	it { should validate_presence_of :description }
+	it { should validate_presence_of :list_id }
 
 	it { should belong_to :list }
 
