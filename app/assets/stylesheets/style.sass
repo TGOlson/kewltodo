@@ -2,7 +2,7 @@ $bg: #fff
 $white: #fff
 $list: #8e44ad
 $todo: #8e44ad
-$nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b, red
+$nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b, #34495e
 $font: Arial, Helvetica, sans-serif
 
 =margin-reset
@@ -28,12 +28,13 @@ body
 		text-decoration: underline
 
 nav
-	position: absolute
+	position: fixed
 	top: 0px
 	left: 0px
 	height: 100%
 	width: 10%
 	color: $white
+
 	/*background-color: red*/
 
 	table
@@ -106,9 +107,12 @@ nav
 		list-style: none
 		padding: 20px
 
+		span .todo-description
+			width: 80%
+
 		.todo-description
 			font-size: 25px
-
+		
 		.todo-actions
 			float: right
 

@@ -1,5 +1,6 @@
 <li class='single-todo <%= "complete" if @todo.complete %>' >
 
+	<div>
 	<span class='todo-description'>
 		<%= (raw("<i class='fa fa-check'></i>")) if @todo.complete %>
 		<%= @todo.description %>
@@ -14,5 +15,5 @@
 			<i class='fa fa-trash-o fa-2x'></i>
 		<% end %>
 	</span>
-
+</div>
 </li>
