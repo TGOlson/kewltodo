@@ -6,7 +6,7 @@
 	</tr>
 	<tr>
 		<td id='current_location'>
-			<p>viewing</p><p><span class='variable'><%= @list ? @list.name : 'all lists' %></span></p>
+			<p><span class='variable'><%= @list ? @list.name : 'all lists' %></span></p>
 		</td>
 	</tr>
 	<tr>
@@ -19,17 +19,14 @@
 		</p></td>
 	</tr>
 	<tr>
-		<td id="credits"><p>
-				<% if @todo || @todos %>
-					<%= link_to 'back to all lists', lists_path %>
-				<% else %>
-					<%= link_to 'be kewl', new_list_path %>
-				<% end %>
+		<td id="go_back"><p>
+					<%= link_to (raw("&#8592")), :back %>
 		</p></td>
 	</tr>	
 	<tr>
 		<td id="credits">
-			<p>making it kewl todo, by tyler</p>
+			<p>by <%= link_to 'tyler olson', 'http://tgolson.com/', target: '_blank' %>
+			<p>project on <%= link_to 'github', 'https://github.com/TGOlson/kewltodo', target: '_blank'  %>
 		</td>
 	</tr>
 </table>

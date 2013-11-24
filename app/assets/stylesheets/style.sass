@@ -39,7 +39,7 @@ a:hover
 nav
 	position: absolute
 	top: 0px
-	right: 0px
+	left: 0px
 	height: 100%
 	width: 10%
 	color: #fff
@@ -60,11 +60,12 @@ nav
 				vertical-align: middle
 				padding: 10px
 
-			#kewltodo
-				font-size: 20px
-				color: #fff
+			#kewltodo 
+				h1
+					font-size: 25px
 
-			#create_new a
+			#create_new a,
+			#go_back a
 				font-size: 50px
 
 			#current_location
@@ -80,12 +81,12 @@ nav
 
 
 #container
+	margin-left: 10%
 	width: 90%
 
 #lists
-	width: 80%
+	width: 800px
 	margin: auto
-	text-align: center
 
 	.single_list
 		height: 220px
@@ -93,6 +94,7 @@ nav
 		background-color: $todo
 		display: inline-block
 		margin: 20px
+		text-align: center
 
 		p
 			font-size: 30px

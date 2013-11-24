@@ -14,7 +14,7 @@ describe 'List Page' do
 	context 'can create a new list' do
 		it 'can navigate to create new form' do
 			visit lists_path
-			click_link 'create new list'
+			click_link '+'
 			expect(page).to have_field 'name'
 		end
 

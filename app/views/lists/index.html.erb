@@ -1,8 +1,8 @@
-<div id='lists'>
+<ul id='lists'>
 
 		<% @lists.each do |list| %>
 
-				<div class='single_list'>
+				<li class='single_list'>
 
 					<p class='list_name'><%= link_to list.name, list_todos_path(list) %></p>
 					
@@ -11,7 +11,7 @@
 						<%= link_to 'delete', list_path(list), method: :delete %>
 					</span>
 
-				</div>
+				</li>
 		
 		<% end %>
-</div>
+</ul>

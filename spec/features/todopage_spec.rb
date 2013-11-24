@@ -28,7 +28,7 @@ describe 'Todo Page' do
 	context 'can create a new todo' do
 		it 'Page has a button to create a new todo' do	
 			visit list_todos_path(list)
-			page.should have_link 'create new todo'
+			page.should have_link '+'
 		end
 	
 		it 'create a new todo' do
