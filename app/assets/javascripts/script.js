@@ -2,6 +2,10 @@ $(function(){
 	$('#todos').sortable()
 	$('#lists').sortable()
 
+	$('#concentration-mode').on('click', function(){
+		$('nav').toggleClass('hiddenNav', 500)
+	})
+
 	$('#create-new').on('ajax:success', function(e, data, status, xhr){
 		// uniqId helps preserve state if multiple new forms tabs are opened
 		var uniqId = Math.floor(Math.random()*10000)

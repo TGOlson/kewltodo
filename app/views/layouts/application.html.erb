@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Todos</title>
+	<title>kewltodo</title>
 	<%= stylesheet_link_tag    "application", :media => "all" %>
 	<%= javascript_include_tag "application" %>
 	<%= csrf_meta_tags %>
@@ -14,6 +14,10 @@
 
 	<div id="container">
 		<%= yield %>
+	</div>
+
+	<div id='concentration-mode'>
+		<i class='fa fa-headphones'></i>
 	</div>
 
 </body>
