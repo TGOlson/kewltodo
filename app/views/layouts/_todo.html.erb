@@ -1,7 +1,7 @@
 <div class="single_todo <%= "complete" if todo.complete %>">
 	<li class='todo_list_item' >
 
-		<span class='todo_name'><%= todo.description %></span>
+		<span class='todo_description'><%= todo.description %></span>
 		<span class='todo_actions'><%= link_to 'complete', todo_path(id: todo.id, todo: { complete: !todo.complete }), method: :put %>
 		<%= link_to 'delete', todo_path(todo), method: :delete %></span>
 	

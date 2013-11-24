@@ -5,6 +5,11 @@
 		</td>
 	</tr>
 	<tr>
+		<td id='current_location'>
+			<p>viewing</p><p><span class='variable'><%= @list ? @list.name : 'all lists' %></span></p>
+		</td>
+	</tr>
+	<tr>
 		<td id="create_new"><p>
 				<% if @todo || @todos %>
 					<%= link_to '+', new_list_todo_path(@list) %>
@@ -12,11 +17,6 @@
 					<%= link_to '+', new_list_path %>
 				<% end %>
 		</p></td>
-	</tr>
-	<tr>
-		<td id='current_location'>
-			<p>viewing</p><p><span class='variable'><%= @list ? @list.name : 'all lists' %></span></p>
-		</td>
 	</tr>
 	<tr>
 		<td id="credits"><p>

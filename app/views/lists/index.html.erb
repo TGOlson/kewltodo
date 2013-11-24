@@ -1,5 +1,17 @@
-<% @lists.each do |list| %>
-	<p><%= link_to list.name, list_path(list) %>
-	<%= link_to 'complete', list_path(id: list.id, list: { complete: !list.complete }), method: :put %>
-	<%= link_to 'delete', list_path(list), method: :delete %></p>
-<% end %>
+<div id='lists'>
+
+		<% @lists.each do |list| %>
+
+				<div class='single_list'>
+
+					<p class='list_name'><%= link_to list.name, list_todos_path(list) %></p>
+					
+					<span class='list_actions'>
+						<%= link_to 'complete', list_path(id: list.id, list: { complete: !list.complete }), method: :put %>
+						<%= link_to 'delete', list_path(list), method: :delete %>
+					</span>
+
+				</div>
+		
+		<% end %>
+</div>
