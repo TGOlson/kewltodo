@@ -1,10 +1,6 @@
-<div id='todos'>
-	<ul id='todo-list'>
-
-		<% @todos.each do |todo| %>
-			<%= render 'layouts/todo', todo: todo %>
-		<% end %>
-	
-	</ul>
-</div>
+<ul id='todos'>
+	<% @todos.each do |todo| %>
+		<%= render 'layouts/todo', todo: todo %>
+	<% end %>
+</ul>
 

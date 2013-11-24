@@ -96,26 +96,22 @@ nav
 
 
 #todos
-	margin-top: 100px
+	padding-top: 20px
+	width: 800px
+	margin: auto
 
-	ul
-		+margin-reset
-		width: 800px
-		margin: auto
-	
-		.single-todo
-			background-color: $todo
-			margin-top: 10px
+	.single-todo
+		background-color: $todo
+		margin-top: 10px
+		margin-bottom: 10px
+		list-style: none
+		padding: 20px
 
-		.complete
-			background-color: darken($todo, 20%)
+		.todo-description
+			font-size: 35px
 
-		li
-			list-style: none
-			padding: 10px
+		.todo-actions
+			float: right
 
-			.todo-description
-				font-size: 35px
-
-			.todo-actions
-				float: right
+	.complete
+		background-color: darken($todo, 20%)

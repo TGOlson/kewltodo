@@ -1,4 +1,4 @@
 $(function(){
-	$('#todo-list').sortable()
+	$('#todos').sortable()
 	$('#lists').sortable()
 })
