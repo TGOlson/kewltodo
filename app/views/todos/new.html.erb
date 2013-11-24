@@ -1,1 +1,6 @@
-new.html.erb
+<%= form_for @todo do |f| %>
+<%= f.text_field :description, placeholder: 'description' %>
+<%= f.label :complete, 'complete' %>
+<%= f.check_box :complete %>
+<%= f.submit 'submit' %>
+<% end %>
