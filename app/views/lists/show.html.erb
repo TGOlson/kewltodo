@@ -1,1 +1,4 @@
-show.html.erb
+<%= @list.name %>
+<% @todos.each do |todo| %>
+	<%= todo.description %>
+	<% end %>

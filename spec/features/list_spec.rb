@@ -49,5 +49,20 @@ describe 'List Page' do
 			click_link 'complete'
 			expect(List.last.complete).to eq true
 		end
+
+		it 'can be deleted' do
+			expect{
+			visit lists_path
+			click_link 'delete'
+			}.to change(List, :count).by -1
+		end
+	end
+
+	context 'can see all related todos' do
+		it 'can navigate to list show page' do
+			list.todos << Todo.create(description: 'kewl todo')
+			visit list_path(list.id)
+			expect(page).to have_content 'kewl todo'
+		end	
 	end
 end
