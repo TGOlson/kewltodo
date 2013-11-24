@@ -5,7 +5,7 @@ $todo: #8e44ad
 $todo-complete: #6C4080
 $todo-font: #fff
 $border: #111
-$nav-colors: orange, green, blue, purple
+$nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b
 
 // mixins
 
@@ -27,33 +27,40 @@ nav
 	top: 0px
 	right: 0px
 	height: 100%
-	width: 20%
+	width: 15%
 	background-color: red
 
-	ul
+	table
 		+margin-reset
 		list-style: none
 		height: 100%
+		width: 100%
 		position: relative
 
-		li
+		tr
 			width: 100%
 			height: 25%
 			text-align: center
 
-		@for $i from 1 through length($nav-colors)
-			li:nth-child(#{$i})
-				background-color: nth($nav-colors, $i)
-		
-			div
-				line-height: 100%
+			td
 				vertical-align: middle
+
+			#kewltodo
+				font-size: 40px
+				color: #fff
+
+		@for $i from 1 through length($nav-colors)
+			tr:nth-child(#{$i})
+				background-color: nth($nav-colors, $i)
+
 
 
 #container
-	width: 80%
+	width: 85%
 
 #todos
+	margin-top: 100px
+
 	ul
 		+margin-reset
 		width: 800px

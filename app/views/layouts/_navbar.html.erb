@@ -1,6 +1,26 @@
-<ul>
-	<li><div>kewltodo</div></li>
-	<li>location</li>
-	<li>create new</li>
-	<li>making it fun to do, by tyler</li>
-</ul>
+<table>
+	<tr>
+		<td id="kewltodo">
+			<h1>kewltodo</h1>
+		</td>
+	</tr>
+	<tr>
+		<td id="create_new"><p>
+				<% if @list %>
+					<%= link_to '+', new_list_todo_path(@list) %>
+				<% else %>
+					<%= link_to '+', new_list_path %>
+				<% end %>
+		</p></td>
+	</tr>
+	<tr>
+		<td id='current_location'>
+			<p>currently viewing <span class='variable'><%= @list ? @list.name : 'all lists' %></span></p>
+		</td>
+	</tr>
+	<tr>
+		<td id="credits">
+			<p>making it kewl todo, by tyler</p>
+		</td>
+	</tr>
+</table>
