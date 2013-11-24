@@ -1,14 +1,16 @@
 <div id='todos'>
-	<ul>
+	<ul id='todo_list'>
+
 	<% @todos.each do |todo| %>
 		<div class="single_todo">
-			<li>
+			<li class='todo_list_item'>
 				<%= todo.description %>
 				<%= todo.complete %>
 				<%= link_to 'complete', todo_path(id: todo.id, todo: { complete: !todo.complete }), method: :put %>
 				<%= link_to 'delete', todo_path(todo), method: :delete %>
 			</li>
-		<div>
+		</div>
 	<% end %>
+	
 	</ul>
 <div>
