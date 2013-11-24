@@ -3,6 +3,7 @@ $white: #fff
 $list: #8e44ad
 $todo: #8e44ad
 $nav-colors: #8e44ad, #f39c12, #2ecc71, #c0392b, red
+$font: Arial, Helvetica, sans-serif
 
 =margin-reset
 	margin: 0px
@@ -17,6 +18,7 @@ body
 	+margin-reset
 	background-color: $bg
 	color: $white
+	font-family: $font
 
 	a
 		text-decoration: none
@@ -77,10 +79,12 @@ nav
 	width: 800px
 	margin: auto
 
+	$list-dimension: 200px
+
 	.single-list
-		height: 220px
-		width: 220px
-		background-color: $todo
+		height: $list-dimension
+		width: $list-dimension
+		background-color: $list
 		display: inline-block
 		margin: 20px
 		text-align: center
@@ -113,6 +117,39 @@ nav
 
 		.todo-actions
 			float: right
+			margin: 3px
+
+			i
+				margin-left: 15px
 
 	.complete
 		background-color: darken($todo, 20%)
+
+
+	.unsaved
+		padding: 17px
+
+		input
+			font-size: 35px
+			border: none
+			background-color: lighten($todo, 5%)
+			color: $white
+			font-family: $font
+			+margin-reset
+
+
+		::-webkit-input-placeholder
+			color: #aaa
+
+		:-moz-placeholder
+			color: #aaa
+
+		::-moz-placeholder
+			color: #aaa
+
+		:-ms-input-placeholder
+			color: #aaa
+
+
+		input:focus
+			outline: none
