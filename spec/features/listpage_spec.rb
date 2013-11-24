@@ -15,13 +15,13 @@ describe 'List Page' do
 		it 'can navigate to create new form' do
 			visit lists_path
 			click_link '+'
-			expect(page).to have_field 'name'
+			expect(page).to have_field 'list_name'
 		end
 
 		it 'can create a new list with valid params' do
 			expect{
 				visit new_list_path
-				fill_in 'name', with: 'cool'
+				fill_in 'list_name', with: 'cool'
 				click_button 'submit'
 				}.to change(List, :count).by 1
 		end
@@ -33,14 +33,6 @@ describe 'List Page' do
 				}.to change(List, :count).by 0
 		end
 
-		it 'can create a list with complete marked true' do
-			visit new_list_path
-			fill_in 'name', with: 'cool'
-			check 'complete'
-			click_button 'submit'
-			expect(List.last.complete).to eq true
-
-		end
 	end
 
 	context 'can update attributes' do
