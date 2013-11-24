@@ -6,6 +6,8 @@ describe Todo do
 
 	it { should validate_presence_of :description }
 
+	it { should belong_to :list }
+
 	let(:todo) { Todo.new description: 'cool'}
 
 	it "complete should default to false" do
