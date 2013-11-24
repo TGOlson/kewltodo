@@ -5,12 +5,12 @@
 		</td>
 	</tr>
 	<tr>
-		<td id='current_location'>
+		<td id='current-location'>
 			<p><span class='variable'><%= @list ? @list.name : 'all lists' %></span></p>
 		</td>
 	</tr>
 	<tr>
-		<td id="create_new"><p>
+		<td id="create-new"><p>
 				<% if @todo || @todos %>
 					<%= link_to '+', new_list_todo_path(@list) %>
 				<% else %>
@@ -19,7 +19,7 @@
 		</p></td>
 	</tr>
 	<tr>
-		<td id="go_back"><p>
+		<td id="go-back"><p>
 					<%= link_to (raw("&#8592")), :back %>
 		</p></td>
 	</tr>	

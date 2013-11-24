@@ -1,9 +1,18 @@
-<div class="single_todo <%= "complete" if todo.complete %>">
-	<li class='todo_list_item' >
+<div class="single-todo <%= "complete" if todo.complete %>">
+	<li class='todo-list-item' >
 
-		<span class='todo_description'><%= todo.description %></span>
-		<span class='todo_actions'><%= link_to 'complete', todo_path(id: todo.id, todo: { complete: !todo.complete }), method: :put %>
-		<%= link_to 'delete', todo_path(todo), method: :delete %></span>
+		<span class='todo-description'><%= todo.description %></span>
+		<span class='todo-actions'>
+			
+			<%= link_to todo_path(id: todo.id, todo: { complete: !todo.complete }), id: "toggle-complete-#{todo.id}", method: :put do %>
+				<i class='fa fa-star-o fa-2x'></i>
+			<% end %>
+
+			<%= link_to todo_path(todo), method: :delete, id: "delete-#{todo.id}" do %>
+				<i class='fa fa-trash-o fa-2x'></i>
+			<% end %>
+		
+		</span>
 	
 	</li>
 </div>

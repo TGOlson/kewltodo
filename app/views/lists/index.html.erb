@@ -1,17 +1,13 @@
 <ul id='lists'>
+	<% @lists.each do |list| %>
 
-		<% @lists.each do |list| %>
-
-				<li class='single_list'>
-
-					<p class='list_name'><%= link_to list.name, list_todos_path(list) %></p>
-					
-					<span class='list_actions'>
-						<%= link_to 'complete', list_path(id: list.id, list: { complete: !list.complete }), method: :put %>
-						<%= link_to 'delete', list_path(list), method: :delete %>
-					</span>
-
-				</li>
+		<li class='single-list'>
+			<p class='list-name'><%= link_to list.name, list_todos_path(list) %></p>
+			<span class='list-actions'>
+				<%= link_to (raw("<i class='fa fa-star-o fa-2x'></i>")), list_path(id: list.id, list: { complete: !list.complete }), method: :put, id: "toggle-complete-#{list.id}" %>
+				<%= link_to (raw("<i class='fa fa-trash-o fa-2x'></i>")), list_path(list), method: :delete, id: "delete-#{list.id}" %>
+			</span>
+		</li>
 		
-		<% end %>
+	<% end %>
 </ul>
