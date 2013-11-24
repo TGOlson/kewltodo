@@ -94,7 +94,7 @@ nav
 
 #todos
 	padding-top: 20px
-	width: 800px
+	width: 700px
 	margin: auto
 	cursor: default
 
@@ -106,24 +106,32 @@ nav
 		padding: 20px
 
 		.todo-description
-			font-size: 35px
+			font-size: 25px
 
 		.todo-actions
 			float: right
-			margin: 3px
 
 			i
 				margin-left: 15px
 
+	.single-todo:hover
+		background-color: lighten($todo, 5%)
+
+	.single-todo:hover
+		background-color: lighten($todo, 5%)
+
 	.complete
 		background-color: darken($todo, 20%)
 
+	.complete:hover
+		background-color: darken($todo, 15%)
+
 
 	.unsaved
-		padding: 17px
+		padding: 18px
 
 		input
-			font-size: 35px
+			font-size: 25px
 			border: none
 			background-color: lighten($todo, 5%)
 			color: $white
