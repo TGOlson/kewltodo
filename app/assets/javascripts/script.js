@@ -52,3 +52,7 @@ function checkForDelete(){
 		$(this).closest('li').fadeOut(350)
 	})
 }
+
+function testy(){
+	return 'cool'
+}

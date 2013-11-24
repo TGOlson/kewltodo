@@ -11,6 +11,8 @@ gem 'jquery-rails'
 
 group :test, :development do
   gem "rspec-rails"
+  gem 'jasmine'
+
 end
 
 group :test do

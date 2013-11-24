@@ -6,4 +6,7 @@ Todos::Application.routes.draw do
   	resources :todos , shallow: true
   end
 
+#  mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
+
+
 end
