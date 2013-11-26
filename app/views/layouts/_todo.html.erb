@@ -2,7 +2,7 @@
 
 	<div>
 	<span class='todo-description'>
-		<%= (raw("<i class='fa fa-check'></i>")) if @todo.complete %>
+		<span class='check-mark'><%= (raw("<i class='fa fa-check'></i>")) if @todo.complete %></span>
 		<%= @todo.description %>
 	</span>
 

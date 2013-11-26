@@ -30,7 +30,9 @@ class TodosController < ApplicationController
 		@todo.update_attributes params[:todo]
 		@todo.toggle_complete if params[:complete]
 		if @todo.save
-			render json: { success: "Todo marked complete." }
+			render partial: 'layouts/todo', todo: @todo
+			
+			# render json: { success: "Todo marked complete." }
 		else
 			render json: { error: "Todo action failed." }
 		end
