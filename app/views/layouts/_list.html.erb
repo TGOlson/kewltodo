@@ -1,4 +1,4 @@
-<li class='single-list <%= "complete" if list.complete %>'>
+<div class='single-list <%= "complete" if list.complete %>'>
 	<p class='list-name'><%= link_to list.name, list_todos_path(list) %></p>
 	<span class='list-actions'>		
 
@@ -10,4 +10,4 @@
 		<% end %>
 	
 	</span>
-</li>
+</div>

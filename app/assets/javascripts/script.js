@@ -1,12 +1,12 @@
 $(function(){
 	$('#todos').sortable()
-	$('#lists').sortable()
+	// $('#lists').sortable()
 
 	checkForDelete()
 	checkForComplete()
 
 	$('#concentration-mode').on('click', function(){
-		$('nav').fadeToggle() //.toggleClass('hiddenNav', 500)
+		$('nav').fadeToggle()
 	})
 
 	$('#create-new').on('ajax:success', function(e, data, status, xhr){
