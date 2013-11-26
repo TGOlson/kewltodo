@@ -6,6 +6,7 @@ var Todo = {
 		$('#create-new-todo').on('ajax:success', this.createForm)
 		$('#todos').on('ajax:success', '.complete-action', this.updateItem)
 		$('#todos').on('ajax:success', '.unsaved form', this.updateItem)	
+		$('#todos').on('ajax:error', this.alertError)	
 	},
 
 	createForm: function(e, data, status, xhr){
@@ -22,9 +23,13 @@ var Todo = {
 
 	findTarget: function(e){
 		return $(e.target).closest('li')
+	},
+
+	alertError: function(e, data, status, xhr){
+		 alert('action failed')
+		 console.log(e, data, status, xhr)
 	}
 }
-
 
 $(function(){
 	Todo.init()

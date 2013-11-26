@@ -17,7 +17,7 @@ class TodosController < ApplicationController
 		if @todo.save
 			render partial: 'layouts/todo', todo: @todo
 		else
-			redirect_to new_list_todo_path(params[:list_id])
+			render json: { message: 'saving new todo failed' }
 		end
 	end
 
@@ -31,16 +31,14 @@ class TodosController < ApplicationController
 		@todo.toggle_complete if params[:complete]
 		if @todo.save
 			render partial: 'layouts/todo', todo: @todo
-			
-			# render json: { success: "Todo marked complete." }
 		else
-			render json: { error: "Todo action failed." }
+			render json: { message: "todo action failed" }
 		end
 	end
 
 	def destroy
 		todo = Todo.find(params[:id]).destroy
-		render json: { success: "Todo deleted." }
+		render json: { message: "todo deleted" }
 	end
 
 end
